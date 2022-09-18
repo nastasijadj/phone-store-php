@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+
+* {
+    font-family: 'Bitter', serif;
+    background-color: #fff9f9;
+    padding: 0;
+    margin: 0;
+}
+
+#n-psp{
+    margin-top: 20px;
+    margin-left: 650px;
+    font-size: 65px;
+}
+
+#novi-btn{
+    font-size: 25px;
+    margin-left: 840px;
+}
+
+#add-forma{
+    width: 800px;
+    margin-top: 50px;
+    margin-left: 600px;
+    font-size: 20px;
+}
+
+#dodaj_telefon_button{
+    margin-top: 10px;
+    margin-left: 300px;
+    font-size: 22px;
+}
+
+.form-input{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
