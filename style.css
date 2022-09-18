@@ -35,3 +35,18 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+.telefoni-prikaz {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 300px 300px 300px;
+    grid-row-gap: 150px;
+    grid-column-gap: 100px;
+    justify-content: center;
+}
+
+
+#slika-tel{
+    margin-left: 50px;
+}
