@@ -16,6 +16,7 @@
 #novi-btn{
     font-size: 25px;
     margin-left: 840px;
+    margin-top: 20px;
 }
 
 #add-forma{
@@ -50,3 +51,11 @@
 #slika-tel{
     margin-left: 50px;
 }
+
+
+#pretraga-txt{
+    width: 500px;
+    margin-left: 10px;
+    margin-top: -65px;
+}
+

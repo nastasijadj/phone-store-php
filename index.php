@@ -16,8 +16,11 @@
 
         <h1 id="n-psp">PHONE STORE PLUS</h1>
 
-        <a href="FORMS/add.php"><button class="btn btn-primary" id="novi-btn">NOVI TELEFON</button></a>
+        <!-- Pretraga telefona -->
+        <input type="text" class="form-control" id="pretraga-txt" placeholder="Pretraga telefona po nazivu modela ili proizvođača...">
 
+
+        <a href="FORMS/add.php"><button class="btn btn-primary" id="novi-btn">NOVI TELEFON</button></a>
 
         <!-- Prikaz telefona -->
         <div class="telefoni-prikaz">
@@ -29,7 +32,7 @@
             from telefon join proizvodjac on telefon.proizvodjac_id = proizvodjac.id";
 
             $DATA = $connection->query($SQL);
-
+            
             while ($telefon = $DATA->fetch_object()) {
             ?>
                 <div class="d-telefon">
@@ -46,10 +49,11 @@
         </div>
 
 
-
-
-
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="JAVASCRIPT/JS.js"></script>
 </body>
 
 </html>
