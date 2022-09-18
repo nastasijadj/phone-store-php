@@ -12,6 +12,8 @@
 
 <body>
 
+
+
     <div class="form-div">
 
         <form method="post" id="add-forma">
@@ -41,9 +43,22 @@
                 <input type="number" class="form-control" name="cena">
             </div>
 
+            <?php
+            require '../DB/DBConnection.php';
+            require '../OOP/Telefon.php';
+            ?>
+
             <div class="form-input">
                 <label class="mb-1">Proizvođač</label>
                 <select class="form-select" name="proizvodjac">
+                    <?php
+                    $SQL = "select * from proizvodjac";
+                    $DATA = $connection->query($SQL);
+
+                    while ($proizvodjac = $DATA->fetch_object()) {
+                    ?>
+                        <option value="<?php echo $proizvodjac->id; ?>"><?php echo $proizvodjac->naziv ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
@@ -51,6 +66,17 @@
             <button type="submit" name="dodaj_telefon_btn" class="btn btn-primary" id="dodaj_telefon_button">Dodaj telefon</button>
 
         </form>
+
+        <?php
+
+        $telefon = new Telefon();
+
+        if (isset($_POST['dodaj_telefon_btn'])) {
+            if ($telefon->dodajNoviTelefon($_POST['model'], $_POST['dijagonala'], $_POST['ram'], $_POST['interna'], $_POST['cena'], $_POST['proizvodjac']))
+                header('Location: ../index.php');
+        }
+
+        ?>
 
     </div>
 
