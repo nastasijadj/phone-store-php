@@ -19,4 +19,13 @@ class Telefon
 
         return $connection->query($SQL);
     }
+
+    public function izmeniTelefon($id, $model, $dijagonala, $ram, $interna, $cena, $proizvodjac_id)
+    {
+        require '../DB/DBConnection.php';
+
+        $SQL = "update telefon set model='" . $model . "', dijagonala='" . $dijagonala . "', ram='" . $ram . "', interna='" . $interna . "', cena='" . $cena . "', proizvodjac_id='" . $proizvodjac_id . "' where id=" . $id;
+
+        return $connection->query($SQL);
+    }
 }

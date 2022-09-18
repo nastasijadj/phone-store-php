@@ -79,7 +79,16 @@
 
         </form>
 
+        <?php
 
+        $telefon = new Telefon();
+
+        if (isset($_POST['izmeni_telefon_btn'])) {
+            if ($telefon->izmeniTelefon($_GET['id'], $_POST['model'], $_POST['dijagonala'], $_POST['ram'], $_POST['interna'], $_POST['cena'], $_POST['proizvodjac']))
+                header('Location: ../index.php');
+        }
+
+        ?>
     </div>
 
 </body>
