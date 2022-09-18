@@ -13,7 +13,6 @@ $(document).ready(function () {
 
                 success: function (DATA) {
                     {
-                        console.log(DATA)
                         $(".telefoni-prikaz").empty();
                         $(".telefoni-prikaz").html(DATA);
                     }
@@ -24,6 +23,35 @@ $(document).ready(function () {
 
     })
 
+
+
+
+
+    $(document).on('click', '#sortiraj-btn', function () {
+
+        var sortKolona = $('#sort_sel').val();
+        var ascDesc = $(this).val();
+
+        $.ajax(
+            {
+                url: 'DB/sortTelefon.php',
+                method: 'post',
+                data: {
+                    sortiranjeKolona: sortKolona,
+                    ascendingDescending: ascDesc
+                },
+
+                success: function (DATA) {
+                    {
+                        $(".telefoni-prikaz").empty();
+                        $(".telefoni-prikaz").html(DATA);
+
+                        ascDesc == 'asc' ? $('#sortiraj-btn').attr('value', 'desc') : $('#sortiraj-btn').attr('value', 'asc');
+                    }
+                }
+            }
+        )
+    })
 
 
 

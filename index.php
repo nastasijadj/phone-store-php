@@ -20,6 +20,19 @@
         <input type="text" class="form-control" id="pretraga-txt" placeholder="Pretraga telefona po nazivu modela ili proizvođača...">
 
 
+        <!-- Sortiranje telefona -->
+        <div id="sort-sel-id">
+            <select id="sort_sel" class="form-select">
+                <option>Izaberi</option>
+                <option value="cena">Cena</option>
+                <option value="model">Model</option>
+                <option value="naziv">Proizvođač</option>
+            </select>
+            <button class="btn btn-primary" id="sortiraj-btn" value="asc">Sortiraj</button>
+        </div>
+
+
+
         <a href="FORMS/add.php"><button class="btn btn-primary" id="novi-btn">NOVI TELEFON</button></a>
 
         <!-- Prikaz telefona -->
@@ -32,7 +45,7 @@
             from telefon join proizvodjac on telefon.proizvodjac_id = proizvodjac.id";
 
             $DATA = $connection->query($SQL);
-            
+
             while ($telefon = $DATA->fetch_object()) {
             ?>
                 <div class="d-telefon">
