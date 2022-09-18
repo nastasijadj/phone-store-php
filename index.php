@@ -55,6 +55,7 @@
                     <h5 class="text-center">RAM: <?php echo $telefon->ram ?></h5>
                     <h5 class="text-center">Interna memorija: <?php echo $telefon->interna ?></h5>
                     <h5 class="text-center">Dijagonala: <?php echo $telefon->dijagonala ?></h5>
+                    <a href="forms/edit.php?id=<?php echo $telefon->id; ?>"><button type="button" class="btn btn-success" id="edit-button">EDIT</button></a>
                 </div>
             <?php
             }
